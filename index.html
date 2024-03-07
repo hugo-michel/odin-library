@@ -9,18 +9,59 @@
 	</head>
 	<body>
 		<div id="main">
-			<form id="form" action="">
-				<label for="title">title</label>
-				<input id="title" name="title" type="text" />
-				<label for="author">author</label>
-				<input id="author" name="author" type="text" />
-				<label for="pages">pages</label>
-				<input id="pages" name="pages" type="text" />
-				<label for="read">read</label>
-				<input id="read" name="read" type="checkbox" />
+
+            <button id="open">Add a book</button>
+
+            <dialog>
+                <form id="form" action="">
+                    <div class="form-element">
+                        <label for="title">title</label>
+                        <input id="title" name="title" type="text" />
+                    </div>
+                    <div class="form-element">
+                        <label for="author">author</label>
+                        <input id="author" name="author" type="text" />
+                    </div>
+                    <div class="form-element">
+                        <label for="pages">pages</label>
+                        <input id="pages" name="pages" type="text" />
+                    </div>
+                    <div class="form-element">
+                        <label for="read">read</label>
+                        <input id="read" name="read" type="checkbox" />
+                    </div>
+    
+                    <input type="button" value="submit" id="add-book" />
+                    <button id="close">close</button>
+                </form>
+
+            </dialog>
+
+
+			<!-- <form id="form" action="">
+				<div class="form-element">
+                    <label for="title">title</label>
+                    <input id="title" name="title" type="text" />
+                </div>
+				<div class="form-element">
+                    <label for="author">author</label>
+                    <input id="author" name="author" type="text" />
+                </div>
+				<div class="form-element">
+                    <label for="pages">pages</label>
+                    <input id="pages" name="pages" type="text" />
+                </div>
+				<div class="form-element">
+                    <label for="read">read</label>
+                    <input id="read" name="read" type="checkbox" />
+                </div>
 
 				<input type="button" value="submit" id="add-book" />
-			</form>
+			</form> -->
+
+
+
+
             <div id="showBook">
 
             </div>
