@@ -67,7 +67,6 @@ function showBook() {
 		newCard.appendChild(btnDelete);
 
 		SHOWBOOK.appendChild(newCard);
-		// BTNDELETE = document.querySelectorAll(".btnDelete");
 	});
 }
 
@@ -76,10 +75,20 @@ function deleteBook() {
 		btn.addEventListener("click", () => {
 			btn.parentElement.remove();
 			myLibrary.splice(index, 1);
+            showBook();
 			BTNDELETE = document.querySelectorAll(".btnDelete");
             BTNCHANGE = document.querySelectorAll(".btnChange");
+            changeStatus();
 		});
 	});
+}
+
+function changeStatus() {
+    BTNCHANGE.forEach((btn, index) => {
+        btn.addEventListener("click",() => {
+            myLibrary[index].status();
+        })
+    })
 }
 
 ADDBOOK.addEventListener("click", () => {
@@ -88,6 +97,6 @@ ADDBOOK.addEventListener("click", () => {
     BTNDELETE = document.querySelectorAll(".btnDelete");
     BTNCHANGE = document.querySelectorAll(".btnChange");
 	deleteBook();
+    changeStatus();
 });
 
-(window.onload = showBook()), deleteBook();
