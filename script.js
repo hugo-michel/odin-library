@@ -1,6 +1,6 @@
 let myLibrary = [
-	{ title: "The Hobbit", author: "JRR Tolkien", pages: 320, read: true },
-	{ title: "Les fourmis", author: "Bernard Werber", pages: 560, read: false },
+	// { title: "The Hobbit", author: "JRR Tolkien", pages: 320, read: true },
+	// { title: "Les fourmis", author: "Bernard Werber", pages: 560, read: false },
 ];
 const TITLE = document.querySelector("#title");
 const AUTHOR = document.querySelector("#author");
@@ -10,12 +10,17 @@ const ADDBOOK = document.querySelector("#add-book");
 const FORM = document.querySelector("#form");
 const SHOWBOOK = document.querySelector("#showBook");
 let BTNDELETE = document.querySelectorAll(".btnDelete");
+let BTNCHANGE = document.querySelectorAll(".btnChange");
 
 function Book(title, author, pages, read) {
 	this.title = title;
 	this.author = author;
 	this.pages = pages;
 	this.read = read;
+
+    this.status = function() {
+        this.read == true ? this.read = false : this.read = true;
+    }
 }
 
 function addBookToLibrary() {
@@ -53,11 +58,16 @@ function showBook() {
 		btnDelete.setAttribute("class", "btnDelete");
 		btnDelete.textContent = "X";
 
+        let btnChange = document.createElement("button");
+        btnChange.setAttribute("class", "btnChange");
+        btnChange.textContent = "C";
+
 		newCard.appendChild(newP);
+        newCard.appendChild(btnChange);
 		newCard.appendChild(btnDelete);
 
 		SHOWBOOK.appendChild(newCard);
-		BTNDELETE = document.querySelectorAll(".btnDelete");
+		// BTNDELETE = document.querySelectorAll(".btnDelete");
 	});
 }
 
@@ -67,6 +77,7 @@ function deleteBook() {
 			btn.parentElement.remove();
 			myLibrary.splice(index, 1);
 			BTNDELETE = document.querySelectorAll(".btnDelete");
+            BTNCHANGE = document.querySelectorAll(".btnChange");
 		});
 	});
 }
@@ -74,6 +85,8 @@ function deleteBook() {
 ADDBOOK.addEventListener("click", () => {
 	addBookToLibrary();
 	showBook();
+    BTNDELETE = document.querySelectorAll(".btnDelete");
+    BTNCHANGE = document.querySelectorAll(".btnChange");
 	deleteBook();
 });
 
