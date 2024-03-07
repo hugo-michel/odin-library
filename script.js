@@ -1,7 +1,4 @@
-let myLibrary = [
-	// { title: "The Hobbit", author: "JRR Tolkien", pages: 320, read: true },
-	// { title: "Les fourmis", author: "Bernard Werber", pages: 560, read: false },
-];
+let myLibrary = [];
 const TITLE = document.querySelector("#title");
 const AUTHOR = document.querySelector("#author");
 const PAGES = document.querySelector("#pages");
@@ -87,6 +84,7 @@ function changeStatus() {
     BTNCHANGE.forEach((btn, index) => {
         btn.addEventListener("click",() => {
             myLibrary[index].status();
+            btn.previousElementSibling.textContent = `${myLibrary[index].title} by ${myLibrary[index].author}, ${myLibrary[index].pages} pages, read : ${myLibrary[index].read}`
         })
     })
 }
