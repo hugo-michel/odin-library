@@ -15,13 +15,17 @@ body {
 	justify-content: center;
     flex-direction: column;
     margin: 0 auto;
+    padding: 40px;
+    gap: 40px;
 }
 
 form {
+    min-height: 300px;
 	display: flex;
+    justify-content: space-around;
 	flex-direction: column;
 	gap: 10px;
-    margin-bottom: 50px;
+
 }
 
 .form-element {
@@ -34,4 +38,23 @@ form {
     display: flex;
     gap: 20px;
     margin-bottom: 30px;
+    border: 1px solid black;
+    padding: 20px 30px;
+}
+
+dialog {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px;
+
+}
+
+dialog::backdrop {
+    backdrop-filter: blur(2px);
+}
+
+#open {
+    padding: 10px 30px;
 }
