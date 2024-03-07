@@ -23,3 +23,8 @@ form {
 	flex-direction: column;
 	gap: 10px;
 }
+
+.card {
+    display: flex;
+    gap: 20px;
+}
