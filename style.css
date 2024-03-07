@@ -36,10 +36,12 @@ form {
 
 .card {
     display: flex;
-    gap: 20px;
+    flex-direction: column;
+    gap: 5px;
     margin-bottom: 30px;
     border: 1px solid black;
     padding: 20px 30px;
+    min-width: 200px;
 }
 
 dialog {
@@ -57,4 +59,10 @@ dialog::backdrop {
 
 #open {
     padding: 10px 30px;
+}
+
+#showBook {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
 }

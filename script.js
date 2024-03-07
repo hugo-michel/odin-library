@@ -59,20 +59,30 @@ function showBook() {
 	myLibrary.forEach((book) => {
 		let newCard = document.createElement("div");
 		newCard.setAttribute("class", "card");
-		let content = `${book.title} by ${book.author}, ${book.pages} pages, read : ${book.read}`;
 
-		let newP = document.createElement("p");
-		newP.textContent = content;
+		let newTitleDiv = document.createElement("div");
+		let newAuthorDiv = document.createElement("div");
+		let newPagesDiv = document.createElement("div");
+		let newReadDiv = document.createElement("div");
+
+		newTitleDiv.textContent = `Titre : ${book.title}`;
+		newAuthorDiv.textContent = `Author : ${book.author}`;
+		newPagesDiv.textContent = `Pages : ${book.pages}`;
+		newReadDiv.textContent = `Read : ${book.read}`;
 
 		let btnDelete = document.createElement("button");
 		btnDelete.setAttribute("class", "btnDelete");
-		btnDelete.textContent = "X";
+		btnDelete.textContent = "Delete book";
 
 		let btnChange = document.createElement("button");
 		btnChange.setAttribute("class", "btnChange");
-		btnChange.textContent = "C";
+		btnChange.textContent = "Change status";
 
-		newCard.appendChild(newP);
+		newCard.appendChild(newTitleDiv);
+		newCard.appendChild(newAuthorDiv);
+		newCard.appendChild(newPagesDiv);
+		newCard.appendChild(newReadDiv);
+
 		newCard.appendChild(btnChange);
 		newCard.appendChild(btnDelete);
 
@@ -89,6 +99,7 @@ function deleteBook() {
 			BTNDELETE = document.querySelectorAll(".btnDelete");
 			BTNCHANGE = document.querySelectorAll(".btnChange");
 			changeStatus();
+            deleteBook();
 		});
 	});
 }
@@ -97,7 +108,7 @@ function changeStatus() {
 	BTNCHANGE.forEach((btn, index) => {
 		btn.addEventListener("click", () => {
 			myLibrary[index].status();
-			btn.previousElementSibling.textContent = `${myLibrary[index].title} by ${myLibrary[index].author}, ${myLibrary[index].pages} pages, read : ${myLibrary[index].read}`;
+			btn.previousElementSibling.textContent = `Read : ${myLibrary[index].read}`;
 		});
 	});
 }
