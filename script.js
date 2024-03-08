@@ -68,7 +68,7 @@ function showBook() {
 		newTitleDiv.textContent = `Titre : ${book.title}`;
 		newAuthorDiv.textContent = `Author : ${book.author}`;
 		newPagesDiv.textContent = `Pages : ${book.pages}`;
-		newReadDiv.textContent = `Read : ${book.read}`;
+		book.read === true ? newReadDiv.textContent = "Read" : newReadDiv.textContent = "Not Read";
 
 		let btnDelete = document.createElement("button");
 		btnDelete.setAttribute("class", "btnDelete");
@@ -108,7 +108,7 @@ function changeStatus() {
 	BTNCHANGE.forEach((btn, index) => {
 		btn.addEventListener("click", () => {
 			myLibrary[index].status();
-			btn.previousElementSibling.textContent = `Read : ${myLibrary[index].read}`;
+			myLibrary[index].read === true ? btn.previousElementSibling.textContent = "Read" : btn.previousElementSibling.textContent = "Not Read";
 		});
 	});
 }
