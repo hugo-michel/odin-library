@@ -104,3 +104,12 @@ dialog::backdrop {
     flex-wrap: wrap;
     gap: 20px;
 }
+
+input:invalid {
+	border: 1px solid red;
+}
+
+input,
+#close {
+    padding: 5px;
+}

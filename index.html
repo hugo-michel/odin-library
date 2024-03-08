@@ -15,19 +15,19 @@
             <dialog>
                 <form id="form" action="">
                     <div class="form-element">
-                        <label for="title">title</label>
-                        <input id="title" name="title" type="text" />
+                        <label for="title">Title</label>
+                        <input id="title" name="title" type="text" required/>
                     </div>
                     <div class="form-element">
-                        <label for="author">author</label>
-                        <input id="author" name="author" type="text" />
+                        <label for="author">Author</label>
+                        <input id="author" name="author" type="text" required/>
                     </div>
                     <div class="form-element">
-                        <label for="pages">pages</label>
-                        <input id="pages" name="pages" type="text" />
+                        <label for="pages">Pages</label>
+                        <input id="pages" name="pages" type="tel" pattern="[0-9]+" required/>
                     </div>
                     <div class="form-element">
-                        <label for="read">read</label>
+                        <label for="read">Have you read it ?</label>
                         <input id="read" name="read" type="checkbox" />
                     </div>
     
@@ -36,30 +36,6 @@
                 </form>
 
             </dialog>
-
-
-			<!-- <form id="form" action="">
-				<div class="form-element">
-                    <label for="title">title</label>
-                    <input id="title" name="title" type="text" />
-                </div>
-				<div class="form-element">
-                    <label for="author">author</label>
-                    <input id="author" name="author" type="text" />
-                </div>
-				<div class="form-element">
-                    <label for="pages">pages</label>
-                    <input id="pages" name="pages" type="text" />
-                </div>
-				<div class="form-element">
-                    <label for="read">read</label>
-                    <input id="read" name="read" type="checkbox" />
-                </div>
-
-				<input type="button" value="submit" id="add-book" />
-			</form> -->
-
-
 
 
             <div id="showBook">
