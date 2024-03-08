@@ -27,10 +27,10 @@ function Book(title, author, pages, read) {
 	this.author = author;
 	this.pages = pages;
 	this.read = read;
+}
 
-	this.status = function () {
-		this.read == true ? (this.read = false) : (this.read = true);
-	};
+Book.prototype.status = function() {
+	this.read == true ? (this.read = false) : (this.read = true);
 }
 
 function addBookToLibrary() {
