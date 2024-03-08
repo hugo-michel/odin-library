@@ -111,5 +111,6 @@ input:invalid {
 
 input,
 #close {
+    border-radius: 5px;
     padding: 5px;
 }

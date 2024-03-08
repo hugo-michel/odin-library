@@ -21,6 +21,10 @@ showButton.addEventListener("click", () => {
 
 closeButton.addEventListener("click", (event) => {
 	event.preventDefault();
+	TITLE.value = "";
+	AUTHOR.value = "";
+	PAGES.value = "";
+	READ.checked = false;
 	dialog.close();
 });
 
