@@ -12,11 +12,13 @@ body {
 #main {
 	display: flex;
     align-items: center;
-	justify-content: center;
+	justify-content: flex-start;
     flex-direction: column;
     margin: 0 auto;
     padding: 40px;
     gap: 40px;
+    min-height: 100dvh;
+    background-color: #F0EEF1;
 }
 
 form {
@@ -37,11 +39,39 @@ form {
 .card {
     display: flex;
     flex-direction: column;
-    gap: 5px;
-    margin-bottom: 30px;
-    border: 1px solid black;
+    align-items: center;
+    gap: 15px;
     padding: 20px 30px;
-    min-width: 200px;
+    min-width: fit-content;
+    border-radius: 10px;
+    background-color: white;
+    max-width: fit-content;
+}
+
+.btnChange, 
+.btnDelete {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 5px;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+}
+
+.green {
+    background-color: lightgreen;
+}
+
+.pink {
+    background-color: lightpink;
+}
+
+.btnDelete {
+    background-color: lightcoral;
+}
+
+.card-title {
+    font-weight: bold;
 }
 
 dialog {
@@ -58,11 +88,18 @@ dialog::backdrop {
 }
 
 #open {
-    padding: 10px 30px;
+    padding: 10px 30px; 
+    background-color: white;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    background-color: lightblue;
 }
 
 #showBook {
+    min-width: 100%;
+    justify-content: center;
     display: flex;
-    gap: 20px;
     flex-wrap: wrap;
+    gap: 20px;
 }

@@ -61,13 +61,14 @@ function showBook() {
 		newCard.setAttribute("class", "card");
 
 		let newTitleDiv = document.createElement("div");
+		newTitleDiv.setAttribute("class", "card-title");
 		let newAuthorDiv = document.createElement("div");
 		let newPagesDiv = document.createElement("div");
 		let newReadDiv = document.createElement("div");
 
-		newTitleDiv.textContent = `Titre : ${book.title}`;
-		newAuthorDiv.textContent = `Author : ${book.author}`;
-		newPagesDiv.textContent = `Pages : ${book.pages}`;
+		newTitleDiv.textContent = `${book.title}`;
+		newAuthorDiv.textContent = `${book.author}`;
+		newPagesDiv.textContent = `${book.pages}`;
 		book.read === true ? newReadDiv.textContent = "Read" : newReadDiv.textContent = "Not Read";
 
 		let btnDelete = document.createElement("button");
