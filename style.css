@@ -59,18 +59,19 @@ form {
 }
 
 .green {
-    background-color: lightgreen;
+    color: green;
 }
 
 .pink {
-    background-color: lightpink;
+    color: red;
 }
 
 .btnDelete {
     background-color: lightcoral;
 }
 
-.card-title {
+.card-title,
+.card-read {
     font-weight: bold;
 }
 

@@ -29,9 +29,9 @@ function Book(title, author, pages, read) {
 	this.read = read;
 }
 
-Book.prototype.status = function() {
+Book.prototype.status = function () {
 	this.read == true ? (this.read = false) : (this.read = true);
-}
+};
 
 function addBookToLibrary() {
 	let title = TITLE.value;
@@ -65,11 +65,14 @@ function showBook() {
 		let newAuthorDiv = document.createElement("div");
 		let newPagesDiv = document.createElement("div");
 		let newReadDiv = document.createElement("div");
+		newReadDiv.setAttribute("class", "card-read");
 
 		newTitleDiv.textContent = `${book.title}`;
 		newAuthorDiv.textContent = `${book.author}`;
 		newPagesDiv.textContent = `${book.pages}`;
-		book.read === true ? newReadDiv.textContent = "Read" : newReadDiv.textContent = "Not Read";
+		book.read === true
+			? (newReadDiv.textContent = "Read") && newReadDiv.classList.add("green")
+			: (newReadDiv.textContent = "Not Read") && newReadDiv.classList.add("pink");
 
 		let btnDelete = document.createElement("button");
 		btnDelete.setAttribute("class", "btnDelete");
@@ -100,7 +103,7 @@ function deleteBook() {
 			BTNDELETE = document.querySelectorAll(".btnDelete");
 			BTNCHANGE = document.querySelectorAll(".btnChange");
 			changeStatus();
-            deleteBook();
+			deleteBook();
 		});
 	});
 }
@@ -109,7 +112,13 @@ function changeStatus() {
 	BTNCHANGE.forEach((btn, index) => {
 		btn.addEventListener("click", () => {
 			myLibrary[index].status();
-			myLibrary[index].read === true ? btn.previousElementSibling.textContent = "Read" : btn.previousElementSibling.textContent = "Not Read";
+			myLibrary[index].read === true
+				? (btn.previousElementSibling.textContent = "Read") &&
+				  btn.previousElementSibling.classList.toggle("green") &&
+				  btn.previousElementSibling.classList.toggle("pink")
+				: (btn.previousElementSibling.textContent = "Not Read") &&
+				  btn.previousElementSibling.classList.toggle("pink") &&
+				  btn.previousElementSibling.classList.toggle("green");
 		});
 	});
 }
