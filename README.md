@@ -1,4 +1,3 @@
 # odin-library
 
-finir le style  
-modifier form : required, number etc
+exercise library de TOP.

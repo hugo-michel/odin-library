@@ -9,38 +9,33 @@
 	</head>
 	<body>
 		<div id="main">
+			<button id="open">Add a book</button>
 
-            <button id="open">Add a book</button>
+			<dialog>
+				<form id="form" action="">
+					<div class="form-element">
+						<label for="title">Title</label>
+						<input id="title" name="title" type="text" required />
+					</div>
+					<div class="form-element">
+						<label for="author">Author</label>
+						<input id="author" name="author" type="text" required />
+					</div>
+					<div class="form-element">
+						<label for="pages">Pages</label>
+						<input id="pages" name="pages" type="tel" pattern="[0-9]+" required />
+					</div>
+					<div class="form-element">
+						<label for="read">Have you read it ?</label>
+						<input id="read" name="read" type="checkbox" />
+					</div>
 
-            <dialog>
-                <form id="form" action="">
-                    <div class="form-element">
-                        <label for="title">Title</label>
-                        <input id="title" name="title" type="text" required/>
-                    </div>
-                    <div class="form-element">
-                        <label for="author">Author</label>
-                        <input id="author" name="author" type="text" required/>
-                    </div>
-                    <div class="form-element">
-                        <label for="pages">Pages</label>
-                        <input id="pages" name="pages" type="tel" pattern="[0-9]+" required/>
-                    </div>
-                    <div class="form-element">
-                        <label for="read">Have you read it ?</label>
-                        <input id="read" name="read" type="checkbox" />
-                    </div>
-    
-                    <input type="button" value="submit" id="add-book" />
-                    <button id="close">close</button>
-                </form>
+					<input type="button" value="submit" id="add-book" />
+					<button id="close">close</button>
+				</form>
+			</dialog>
 
-            </dialog>
-
-
-            <div id="showBook">
-
-            </div>
+			<div id="showBook"></div>
 		</div>
 	</body>
 </html>

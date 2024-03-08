@@ -9,7 +9,7 @@ const SHOWBOOK = document.querySelector("#showBook");
 let BTNDELETE = document.querySelectorAll(".btnDelete");
 let BTNCHANGE = document.querySelectorAll(".btnChange");
 
-const regexNumber = /[0-9]+/
+const regexNumber = /[0-9]+/;
 
 const dialog = document.querySelector("dialog");
 const showButton = document.querySelector("#open");
@@ -132,7 +132,7 @@ function changeStatus() {
 ADDBOOK.addEventListener("click", (event) => {
 	event.preventDefault();
 
-	if ((TITLE.value != "") && (AUTHOR.value != "") && (PAGES.value != "") && (regexNumber.test(PAGES.value))) {
+	if (TITLE.value != "" && AUTHOR.value != "" && PAGES.value != "" && regexNumber.test(PAGES.value)) {
 		addBookToLibrary();
 		showBook();
 		BTNDELETE = document.querySelectorAll(".btnDelete");
@@ -141,6 +141,4 @@ ADDBOOK.addEventListener("click", (event) => {
 		changeStatus();
 		dialog.close();
 	}
-
-
 });
