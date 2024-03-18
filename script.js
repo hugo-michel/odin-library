@@ -28,16 +28,29 @@ closeButton.addEventListener("click", (event) => {
 	dialog.close();
 });
 
-function Book(title, author, pages, read) {
-	this.title = title;
-	this.author = author;
-	this.pages = pages;
-	this.read = read;
-}
+// function Book(title, author, pages, read) {
+// 	this.title = title;
+// 	this.author = author;
+// 	this.pages = pages;
+// 	this.read = read;
+// }
 
-Book.prototype.status = function () {
-	this.read == true ? (this.read = false) : (this.read = true);
-};
+// Book.prototype.status = function () {
+// 	this.read == true ? (this.read = false) : (this.read = true);
+// };
+
+class Book {
+	constructor(title, author, pages, read) {
+		this.title = title;
+		this.author = author;
+		this.pages = pages;
+		this.read = read;
+	}
+
+	status() {
+		this.read == true ? (this.read = false) : (this.read = true);
+	}
+}
 
 function addBookToLibrary() {
 	let title = TITLE.value;
